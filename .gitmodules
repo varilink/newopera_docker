@@ -1,0 +1,12 @@
+[submodule "tools/wordpress"]
+	path = tools/wordpress
+	url = git@github.com:varilink/tools-wordpress.git
+[submodule "tools/proxy"]
+	path = tools/proxy
+	url = git@github.com:varilink/tools-proxy.git
+[submodule "wordpress"]
+	path = wordpress
+	url = git@github.com:varilink/newopera-wordpress.git
+[submodule "tools/gimp"]
+	path = tools/gimp
+	url = git@github.com:varilink/tools-gimp.git
