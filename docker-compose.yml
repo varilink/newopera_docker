@@ -1,0 +1,30 @@
+version: "3.6"
+
+services:
+
+  gimp:
+
+    volumes:
+      - ./wordpress/gimp/:/gimp/
+
+  phpmyadmin:
+
+    image: phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+
+  wordpress:
+
+    environment:
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - ./wordpress/plugin:/var/www/html/wp-content/plugins/varilink-site-plugin
+      - ./wordpress/theme:/var/www/html/wp-content/themes/varilink-site-theme
+
+  wp-cli:
+
+    volumes:
+      - ./wordpress/plugin:/var/www/html/wp-content/plugins/varilink-site-plugin
+      - ./wordpress/theme:/var/www/html/wp-content/themes/varilink-site-theme
+      - ./wordpress:/wordpress
