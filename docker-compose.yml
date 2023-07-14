@@ -6,6 +6,7 @@ services:
 
     volumes:
       - ./wordpress/gimp/:/gimp/
+      - ./wordpress/theme/assets/img/:/gimp/dist/
 
   wordpress:
 
