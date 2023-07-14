@@ -27,3 +27,4 @@ services:
       - *site-plugin
       - *varilink-log-writer-plugin
       - *theme
+      - ./wordpress/wp-cli-scripts/:/wp-cli-scripts/:ro
