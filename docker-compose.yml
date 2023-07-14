@@ -10,11 +10,19 @@ services:
   wordpress:
 
     volumes:
-      - ./wordpress/plugin:/var/www/html/wp-content/plugins/varilink-site-plugin
-      - ./wordpress/theme:/var/www/html/wp-content/themes/varilink-site-theme
+      - &site-plugin
+        "./wordpress/site-plugins/newopera-productions/:\
+        /var/www/html/wp-content/plugins/newopera-productions/:ro"
+      - &varilink-log-writer-plugin
+        "./varilink-plugins/varilink-log-writer/:\
+        /var/www/html/wp-content/plugins/varilink-log-writer/:ro"
+      - &theme
+        "./wordpress/theme/:\
+        /var/www/html/wp-content/themes/newopera-site/:ro"
 
   wp-cli:
 
     volumes:
-      - ./wordpress/plugin:/var/www/html/wp-content/plugins/varilink-site-plugin
-      - ./wordpress/theme:/var/www/html/wp-content/themes/varilink-site-theme
+      - *site-plugin
+      - *varilink-log-writer-plugin
+      - *theme
