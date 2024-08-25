@@ -13,3 +13,6 @@
 [submodule "varilink-plugins"]
 	path = varilink-plugins
 	url = git@github.com:varilink/libraries-wordpress_plugins.git
+[submodule "tools/wordpress-make-backup"]
+	path = tools/wordpress-make-backup
+	url = git@github.com:varilink/tools_wordpress-make-backup.git
