@@ -1,0 +1,16 @@
+services:
+
+  db:
+
+    volumes:
+      - ./backup:/docker-entrypoint-initdb.d/:ro
+
+  wp-cli:
+
+    volumes:
+      - ./backup:/backup/
+
+  wp-make-backup:
+
+    environment:
+      - DOMAIN=newoperaderby.org.uk
