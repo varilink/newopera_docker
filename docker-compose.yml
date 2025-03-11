@@ -1,11 +1,5 @@
 services:
 
-  gimp:
-
-    volumes:
-      - ./wordpress/gimp/:/gimp/
-      - ./wordpress/theme/assets/img/:/gimp/dist/
-
   npx:
 
     volumes:
