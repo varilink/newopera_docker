@@ -1,3 +1,9 @@
+# ------------------------------------------------------------------------------
+# docker-compose.yml
+# ------------------------------------------------------------------------------
+
+---
+
 services:
 
   npx:
@@ -8,19 +14,23 @@ services:
   wordpress:
 
     volumes:
-      - &site-plugin
-        "./wordpress/site-plugins/newopera-productions/:\
-        /var/www/html/wp-content/plugins/newopera-productions/:ro"
+      - &plugin
+        "./wordpress/plugin/:\
+        /var/www/html/wp-content/plugins/newopera/:ro"
       - &varilink-log-writer-plugin
         "./varilink-plugins/varilink-log-writer/:\
         /var/www/html/wp-content/plugins/varilink-log-writer/:ro"
       - &theme
         "./wordpress/theme/:\
-        /var/www/html/wp-content/themes/newopera-site/:ro"
+        /var/www/html/wp-content/themes/newopera/"
+      - &font
+        "./wordpress/theme/node_modules/@fontsource/open-sans/files/:\
+        /var/www/html/wp-content/themes/newopera/font/"
 
   wp-cli:
 
     volumes:
-      - *site-plugin
-      - *varilink-log-writer-plugin
+      - *plugin
       - *theme
+      - *font
+      - ./backup/:/backup/
