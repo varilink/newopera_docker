@@ -23,7 +23,7 @@
 	url = git@github.com:varilink/tools_wordpress-parse-theme-css.git
 
 [submodule "varilink-plugins"]
-	path = varilink-plugins
+	path = varilink/plugins
 	url = git@github.com:varilink/libraries_wordpress-plugins.git
 
 [submodule "wordpress"]
